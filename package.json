@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "description": "Fragments UI testing web app",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,6 +15,10 @@
   "author": "Chan Dinh (Oscar) Phu <cdphu@senecacollege.ca>",
   "license": "UNLICENSED",
   "dependencies": {
-    "aws-amplify": "^4.3.35"
+    "aws-amplify": "^4.3.35",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0"
   }
 }
