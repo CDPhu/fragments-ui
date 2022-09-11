@@ -1,4 +1,4 @@
-// src/auth.js
+// src/js/auth.js
 
 import { Amplify, Auth } from 'aws-amplify';
 
