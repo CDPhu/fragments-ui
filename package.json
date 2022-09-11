@@ -11,5 +11,8 @@
     "url": "git+https://github.com/LostButton/fragments-ui.git"
   },
   "author": "Chan Dinh (Oscar) Phu <cdphu@senecacollege.ca>",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aws-amplify": "^4.3.35"
+  }
 }
