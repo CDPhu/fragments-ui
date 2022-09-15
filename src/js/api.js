@@ -6,7 +6,7 @@ const apiUrl = process.env.API_URL || 'http://localhost:8080';
 /**
  * Given an authenticated user, request all fragments for this user from the
  * fragments microservice (currently only running locally). We expect a user
- * to have an `idToken` attached, so we can send that along with the request.s
+ * to have an `idToken` attached, so we can send that along with the request.
  */
 export async function getUserFragments(user) {
   console.log('Requesting user fragments data...');
