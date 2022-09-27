@@ -1,13 +1,19 @@
 // src/js/app.js
 
 import { Auth, getUser } from "./auth";
-import { getUserFragments } from "./api";
+import { getUserFragmentList, getUserFragments, postUserFragments, getUserDataById } from './api';
 
 async function init() {
   // Get our UI elements
   const userSection = document.querySelector("#user");
   const loginBtn = document.querySelector("#login");
   const logoutBtn = document.querySelector("#logout");
+
+  const postSection = document.querySelector('#post');
+  const postBTN = document.querySelector('#postBtn');
+  const getBTN = document.querySelector('#getBtn');
+  const getListBTN = document.querySelector('#getListBtn');
+  const getByIdBTN = document.querySelector('#getByIdBtn');
 
   // Wire up event handlers to deal with login and logout.
   loginBtn.onclick = () => {
@@ -29,6 +35,25 @@ async function init() {
     return;
   }
 
+ // Do an authenticated request to the fragments API server and log the result
+ //getUserFragments(user);
+  postBTN.onclick = () => {
+    let data = document.querySelector('#data').value;
+    postUserFragments(user,data);
+  }
+  getBTN.onclick = () => {
+    getUserFragments(user);
+  }
+  getListBTN.onclick = () => {
+    getUserFragmentList(user);
+  }
+
+  getByIdBTN.onclick = () => {
+    let id = document.querySelector('#data').value
+
+    getUserDataById(user,id);
+  }
+
   // Log the user info for debugging purposes
   console.log({ user });
 
@@ -36,13 +61,14 @@ async function init() {
   userSection.hidden = false;
 
   // Show the user's username
-  userSection.querySelector(".username").innerText = user.username;
+  //userSection.querySelector(".username").innerText = user.username;
+  userSection.querySelector('.username').innerHTML = user.username;
 
   // Disable the Login button
   loginBtn.disabled = true;
-
-  // Do an authenticated request to the fragments API server and log the result
-  getUserFragments(user);
+  if(loginBtn.disabled = true){
+    postSection.hidden = false;
+  }
 }
 
 // Wait for the DOM to be ready, then start the app
