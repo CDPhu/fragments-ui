@@ -40,19 +40,19 @@ async function init() {
   postBTN.onclick = () => {
     let data = document.querySelector('#data').value;
     postUserFragments(user,data);
-  }
+  };
   getBTN.onclick = () => {
     getUserFragments(user);
-  }
+  };
   getListBTN.onclick = () => {
     getUserFragmentList(user);
-  }
+  };
 
   getByIdBTN.onclick = () => {
     let id = document.querySelector('#data').value
 
     getUserDataById(user,id);
-  }
+  };
 
   // Log the user info for debugging purposes
   console.log({ user });

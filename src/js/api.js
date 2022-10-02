@@ -24,7 +24,7 @@ export async function getUserFragments(user) {
     console.error('Unable to call GET /v1/fragment', { err });
   }
 }
-export async function postUserFragments() {
+export async function postUserFragments(user,data) {
   console.log('Posting user fragments data...');
   try {
     const options = {
