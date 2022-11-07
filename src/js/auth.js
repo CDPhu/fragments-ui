@@ -1,6 +1,6 @@
-// src/js/auth.js
+// src/auth.js
 
-import { Amplify, Auth } from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 
 // Configure our Auth object to use our Cognito User Pool
 Amplify.configure({
@@ -60,12 +60,6 @@ async function getUser() {
       username,
       idToken,
       accessToken,
-      // Include a simple method to generate headers with our Authorization info
-      authorizationHeaders: (type = 'application/json') => {
-        const headers = { 'Content-Type': type };
-        headers['Authorization'] = `Bearer ${idToken}`;
-        return headers;
-      },
     };
   } catch (err) {
     console.log(err);
