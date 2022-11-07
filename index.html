@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Fragments UI</title>
     <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
-    <script type="module" src="src/js/app.js"></script>
     <script type="module" src="src/js/api.js"></script>
-</head>
-
-<body>
+    <script type="module" src="src/js/app.js"></script>
+  </head>
+  <body>
     <h1>Fragments UI</h1>
     <section>
-        <nav><button id="login">Login</button> <button id="logout">Logout</button></nav>
+      <nav><button id="login">Login</button> <button id="logout">Logout</button></nav>
     </section>
     <section hidden id="user">
-        <h2>Hello <span class="username"></span>!</h2>
+      <h2>Hello <span class="username"></span>!</h2>
     </section>
     <section hidden id="post">
-        <from>
-          <input type="text" id="data">
-          <button type="submit" id="postBtn"> POST </button>
-          <button type="submit" id="getBtn"> GET FRAGMENT </button>
-          <button type="submit" id="getListBtn"> GET FRAGMENT EXPAND </button>
-          <button type="submit" id="getByIdBtn"> GET DATA BY ID</button>
-        </from>
-    
-        </section>
-  
-</body>
+      
+      <label>Choose a type for the fragment you wish to POST:
+        <select name="types" id="types" required>
+          <option value="application/json">application/json</option>
+          <option value="text/html">text/html</option>
+          <option value="text/plain">text/plain</option>
+          <option value="text/markdown">text/markdown</option>
+        </select>
+        <hr>
+      <textarea type="text" id="data"></textarea>
+      <button type="submit" id="postBtn"> POST </button>
+     
+      <button type="submit" id="getBtn"> GET FRAGMENT </button>
+      <button type="submit" id="getListBtn"> GET FRAGMENT EXPAND </button>
 
+      <input type="text" id="id">
+      <button type="submit" id="getByIdBtn"> GET Data</button>
+      <button type="submit" id="getInfoBtn"> GET Metadata</button>
+    <div id="dataBack"></div>
+
+    </section>
+  </body>
+  
+ 
 </html>
